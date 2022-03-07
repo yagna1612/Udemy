@@ -1,0 +1,55 @@
+.quiz{
+  color: aliceblue;
+  padding: 1em;
+  height: 100%;
+}
+.quiz-card{
+  padding: 1em;
+  margin: 0%;
+  border-style: solid;
+  border-color: aliceblue;
+  color: aliceblue;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 0.1em;
+  border-style: solid;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px 0 black;
+  margin-bottom: 1.5em;
+}
+.quiz-card:hover{
+  box-shadow: 0 5px 10px 0 aliceblue;
+  transition: 0.3s;
+}
+form{
+  width: 80%;
+}
+.quiz-card label{
+  font-size: large;
+  margin-left: 0.5em;
+  padding: 2px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+.quiz-card label i{
+  padding-right: 2px;
+}
+.quiz-card button{
+  margin-top: 0.5em;
+  width: 100%;
+  font-size:medium;
+}
+/* form button:focus{
+  background: rgb(250, 117, 117);
+  color: black;
+} */
+.submit{
+  margin-bottom: 1em;
+  width: 100%;
+}
+.ratings{
+  margin: 1em;
+  width: 100%;
+}
+bar-rating{
+  --br-font-size:30px;
+}

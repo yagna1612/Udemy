@@ -1,0 +1,45 @@
+<div class="row d-flex justify-content-center align-content-center" >
+  <div class="form-row m-auto mt-3 bg-dark  edit row">
+    <div class="col-md-5 justify-content-center" style="padding: 1em">
+      <img class="profilepic" *ngIf="!this.user.profilePic" src="/assets/images/DefaultImage.jpg" />
+      <img class="profilepic" id="pp" *ngIf="this.user.profilePic" [src]="this.profilePic" />
+    </div>
+    <div class="col-md-7">
+      <app-upload-files (onUploadFinished)="uploadFinished($event)"></app-upload-files>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="p-2">
+        <div class="row">
+            <label for="name" class="form-label col-4">Name</label>
+            <input type="text" class="form-control col"
+            formControlName="fullName"
+            >
+            <span *ngIf="!fullName.valid && fullName.touched"
+            class="error-block">
+              Please provide a valid name
+            </span>
+        </div>
+
+        <div class="row">
+          <label for="email" class="form-label col-4">Email</label>
+          <input type="text" class="form-control col" formControlName="emailID">
+          <span *ngIf="!email.valid && email.touched" class="error-block">
+            <span *ngIf="email.hasError('required')">
+                Please provide email id
+            </span>
+            <span *ngIf="email.hasError('email')">
+              Please provide valid email id
+            </span>
+          </span>
+        </div>
+
+        <div class="row">
+          <label for="mobile" class="form-label col-4">Mobile</label>
+          <input type="text" class="form-control col" formControlName="mobileNo">
+        </div>
+        <div class="w-100 p-3 mb-3">
+          <button type="submit" [disabled]="!this.editForm.valid" class="btn btn-outline-primary col-4" style="float: right;">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

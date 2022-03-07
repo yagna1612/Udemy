@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import '~bootstrap-icons/font/bootstrap-icons';
+@import '~ngx-bar-rating/themes/br-stars-theme.scss';
+body{
+  /* background-image: url('assets/images/dark1.jpg'); */
+  background-color: #BFC9CA ;
+}
+@font-face {
+  font-family: "Hand";
+  src: local("Hand"), url(/assets/fonts/hand/GochiHand-Regular.ttf) format("truetype");
+}
+.line{
+  height: 0.2em;
+  border-radius: 40px;
+}
+.row label{
+  padding: 0%;
+  margin: 0%;
+  margin-top: 0.8em;
+}
+
+.card ul{
+  padding: 1em;
+}
+.form{
+  height: 100%;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 2.5em;
+  padding: 3%;
+  margin-top: 1em;
+}
+.row{
+  color: aliceblue;
+}
+.row input{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-width: 0.2em;
+  border-bottom-color: whitesmoke;
+  background-color: transparent;
+  color: white;
+}
+.card{
+  height: 25em;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 3em;
+}
+.cardheader{
+  text-align: center;
+  margin-top: 0.8em;
+  color: aliceblue;
+  font-size: large;
+}
+.menu{
+  height: 100%;
+}
+
+.error-block{
+  color: red;
+  font-size: small;
+  text-align: right;
+  /* position: relative; */
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  width: max-content;
+  /* float: right; */
+  justify-content: end;
+  align-self: flex-end;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

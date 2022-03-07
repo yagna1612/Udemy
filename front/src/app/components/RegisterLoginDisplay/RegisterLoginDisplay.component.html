@@ -1,0 +1,20 @@
+<ul
+  class="menu my-md-5 m-2"
+  *ngIf="!this.isUserLoggedIn"
+>
+  <li class="row justify-content-center p-3">
+    <button class="btn btn-light w-50"  (click)="isRegister()">Register</button>
+  </li>
+  <li class="row justify-content-center p-3">
+    <button class="btn btn-light w-50" (click)="isLogin()">Login</button>
+  </li>
+</ul>
+<ul
+  class="menu my-md-5 m-2"
+  *ngIf="this.isUserLoggedIn"
+>
+<li class="row">
+  <app-register *ngIf="this.Register && this.isUserLoggedIn"></app-register>
+  <app-login *ngIf="this.Login && this.isUserLoggedIn"></app-login>
+</li>
+</ul>

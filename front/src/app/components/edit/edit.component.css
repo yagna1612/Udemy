@@ -1,0 +1,11 @@
+.edit{
+  border-radius: 20px;
+  width: 70%;
+}
+.profilepic{
+  max-width: 100%;
+  border-radius: 10px;
+  float: left;
+  border-style:groove;
+  border-color: aliceblue;
+}

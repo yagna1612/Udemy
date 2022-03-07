@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark flex-row" style="padding-top: 10px;">
+  <div  style="width: 100%;text-align: center;">
+    <img src="/assets/images/logo.png" class="img-fluid logo"  alt="Responsive image">
+  </div>
+</nav>
+<nav class="navbar bg-dark" style="text-align:center;height: 70px;">
+  <div class="title" style="width: 100%;">
+    Yagna Patel
+  </div>
+</nav>
+<nav
+  class="navbar navbar-expand-md navbar-dark bg-dark flex-row justify-content-lg-center" >
+  <ul class="nav  justify-content-center" style="width: 100%;text-align: center;">
+    <li class="nav-item">
+      <button class="btn btn-dark" [routerLinkActive]=""><a class="nav-link pr-1" href="#">Home</a></button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-dark" (click)="open()"><a class="nav-link pr-1">Resume</a></button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-dark" (click)="proj()"><a class="nav-link pr-1" >Projects</a></button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-dark" (click)="goToGitHub()"><i class="bi bi-github nav-link pr-1" style="color: aliceblue;"></i></button>
+      <button class="btn btn-dark" (click)="goToLinkedIn()"><i class="bi bi-linkedin nav-link pr-1" style="color: aliceblue;"></i></button>
+    </li>
+      <li class="nav-item dropdown">
+        <button class="btn btn-dark"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-circle" style="color: aliceblue;"></i></a>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+            <ul  class="p-0">
+              <li class="row" *ngIf="this.user==null">
+                <span (click)="Register()" style="text-align: center;">Register</span>
+              </li>
+              <li class="row" *ngIf="this.user==null">
+                <span (click)="Login()" style="text-align: center;">Login</span>
+              </li>
+              <li class="row justify-content-center" *ngIf="this.user" style="text-align: center;" >
+                <span style="opacity: 60%;">{{this.user.fullName}}</span>
+                <hr style="padding: 0%;margin: 0%;width: 80%;">
+              </li>
+              <li class="row" *ngIf="this.user">
+                <span (click)="Logout()" style="text-align: center;">Logout</span>
+              </li>
+            </ul>
+          </div>
+        </button>
+      </li>
+</ul>
+</nav>

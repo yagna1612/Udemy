@@ -1,0 +1,102 @@
+<div class="row h-100 bg-dark user">
+  <span class="cardheader">Welcome, Quiz Taker</span>
+  <div class="line bg-gradient" style="margin-top: 1%;"></div>
+  <div
+    class="col-md-4 p-3"
+    style="height: 90%"
+  >
+    <div *ngIf="!this.userData">
+      <app-RegisterLoginDisplay></app-RegisterLoginDisplay>
+    </div>
+    <div *ngIf="this.userData" class="p-3 userbody mt-3">
+      <span class="cardheader">
+        {{ this.userData.fullName }}
+      </span>
+      <div class="line bg-gradient" style="margin-top: 1%;"></div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 justify-content-center" style="padding: 1em">
+          <img class="profilepic" *ngIf="!this.userData.profilePic" src="/assets/images/DefaultImage.jpg" />
+          <img class="profilepic" *ngIf="this.userData.profilePic" [src]="this.profilePic" />
+        </div>
+        <div class="col-md-7 justify-content-center">
+          <ul>
+            <li class="row">
+              <span class="col-md-6" style="float: left">Email Id</span>
+              <span class="col-md-6 wrap">{{ this.userData.emailID }}</span>
+            </li>
+            <li class="row">
+              <span class="col-md-6">Mobile No</span>
+              <span class="col-md-6">{{ this.userData.mobileNo }}</span>
+            </li>
+            <li class="row" style="padding: 1em">
+              <button class="btn btn-primary col-md-5" (click)="edit()">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <span class="col-md-1"></span>
+              <button
+                (click)="Logout()"
+                class="btn btn-outline-danger col-md-5"
+              >
+                <i class="bi bi-box-arrow-right"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <span>
+          <span *ngIf="this.highest==null||this.highest==undefined">You don't have a high score. Press the button below to take the quiz.</span>
+          <span *ngIf="this.highest">
+          Your Highest Score is {{ this.highest }}.<br />
+          <span *ngIf="this.highest < this.allTimeHighest">
+            Take the Quiz again and become the highest scorer.
+          </span>
+          <span *ngIf="this.highest >= this.allTimeHighest">
+            Congratulations!!! You have topped the chart.
+          </span></span>
+        </span>
+        <br />
+        <button class="btn btn-outline-light" style="margin-top: 2%;" (click)="takeTheQuiz()">
+          Take the Quiz
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 p-3" style="height: 90%">
+      <div class="row h-100 p-3">
+        <div class="col-md-4 h-100 tb">
+          <span class="cardheader"> Top Scorers </span>
+          <table class="table" style="color: aliceblue">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of paginateData; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.score }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <ngb-pagination
+            class="d-flex justify-content-end bg-dark"
+            [pageSize]="pageSize"
+            [collectionSize]="this.collSize"
+            size="sm"
+            [(page)]="page"
+            (pageChange)="getDataPaginated()"
+          >
+          </ngb-pagination>
+        </div>
+        <div
+          class="col-md-8 d-flex justify-content-center align-content-center"
+        >
+          <canvas #myChart style="max-width: 80%; max-height: 90%"></canvas>
+        </div>
+      </div>
+    </div>
+</div>

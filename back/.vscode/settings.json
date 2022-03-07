@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net5.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/7e09b6a8-e7bf-46ed-9c1b-049d2e14e365/resourceGroups/Portfolio/providers/Microsoft.Web/sites/yagna"
+}

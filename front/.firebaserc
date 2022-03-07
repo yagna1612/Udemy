@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "portfolio-yagna"
+  },
+  "targets": {
+    "portfolio-yagna": {
+      "hosting": {
+        "quiz": [
+          "portfolio-yagna"
+        ]
+      }
+    }
+  }
+}

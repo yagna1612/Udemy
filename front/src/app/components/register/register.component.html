@@ -1,0 +1,76 @@
+<div class="row" style="width: 100%;margin: 0%;">
+  <div class="form-row m-auto mt-3 bg-dark">
+      <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <label for="name" class="form-label col-4">Name</label>
+            <input type="text" class="form-control col"
+            formControlName="fullName"
+            >
+            <span *ngIf="!fullName.valid && fullName.touched"
+            class="error-block">
+              Please provide a valid name
+            </span>
+        </div>
+
+        <div class="row">
+          <label for="email" class="form-label col-4">Email</label>
+          <input type="text" class="form-control col" formControlName="emailID">
+          <span *ngIf="!email.valid && email.touched" class="error-block">
+            <span *ngIf="email.hasError('required')">
+                Please provide email id
+            </span>
+            <span *ngIf="email.hasError('email')">
+              Please provide valid email id
+            </span>
+          </span>
+        </div>
+
+        <div class="row">
+          <label for="name" class="form-label col-4">Username</label>
+          <input type="text" class="form-control col"
+          formControlName="userName"
+          >
+          <span *ngIf="!userName.valid && userName.touched"
+          class="error-block">
+            Please provide a valid Username
+          </span>
+      </div>
+
+        <div class="row">
+          <label for="passwrod" class="form-label col-4">Password</label>
+          <input type="password" class="form-control col" formControlName="password">
+          <span *ngIf="!password.valid && password.touched" class="error-block">
+            <span *ngIf="password.errors['required']">
+              Please provide password
+            </span>
+            <span *ngIf="password.errors['minlength']">
+              Password should not be lesser than 8 character
+            </span>
+          </span>
+        </div>
+
+        <div class="row">
+          <label for="cpassword" class="form-label col-4">Confirm Password</label>
+          <input type="password" class="form-control col" formControlName="confirmPassword">
+          <span  *ngIf="!confirmPassword.valid && confirmPassword.touched" class="error-block">
+            <span *ngIf="confirmPassword.hasError('required')">
+              Please confirm password
+            </span>
+          </span>
+            <span *ngIf="registerationForm.hasError('notmatched') && confirmPassword.valid">
+              Password not matched
+            </span>
+        </div>
+
+        <div class="row">
+          <label for="mobile" class="form-label col-4">Mobile</label>
+          <input type="text" class="form-control col" formControlName="mobileNo">
+        </div>
+        <div class="w-100 p-3">
+          <button type="reset" class="btn btn-outline-danger col-4" style="float: left;" (click)="goBack()">Cancel</button>
+          <button type="submit" [disabled]="!this.registerationForm.valid" class="btn btn-outline-primary col-4" style="float: right;">Register</button>
+        </div>
+      </form>
+  </div>
+
+</div>

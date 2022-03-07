@@ -1,0 +1,108 @@
+<div class="quiz d-flex justify-content-center align-content-center" *ngIf="this.questions">
+  <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+    <div class="row quiz-card bg-dark">
+      <label for="question1" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[0].question}}</label>
+      <div *ngFor="let x of this.questions[0].options"  (click)="onButtonGroupClick($event,'question1')"  class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question2" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[1].question}}</label>
+      <div *ngFor="let x of this.questions[1].options" (click)="onButtonGroupClick($event,'question2',true)" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question3" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[2].question}}</label>
+      <div *ngFor="let x of this.questions[2].options" (click)="onButtonGroupClick($event,'question3')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question4" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[3].question}}</label>
+      <div *ngFor="let x of this.questions[3].options" (click)="onButtonGroupClick($event,'question4')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question5" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[4].question}}</label>
+      <div *ngFor="let x of this.questions[4].options" (click)="onButtonGroupClick($event,'question5')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question6" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[5].question}}</label>
+      <div *ngFor="let x of this.questions[5].options" (click)="onButtonGroupClick($event,'question6')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question7" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[6].question}}</label>
+      <div *ngFor="let x of this.questions[6].options" (click)="onButtonGroupClick($event,'question7')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question8" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[7].question}}</label>
+      <div *ngFor="let x of this.questions[7].options" (click)="onButtonGroupClick($event,'question8')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question9" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[8].question}}</label>
+      <div *ngFor="let x of this.questions[8].options" (click)="onButtonGroupClick($event,'question9')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question10" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[9].question}}</label>
+      <div *ngFor="let x of this.questions[9].options" (click)="onButtonGroupClick($event,'question10',true)" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question11" class="form-label col-4"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[10].question}}</label>
+      <div *ngFor="let x of this.questions[10].options" (click)="onButtonGroupClick($event,'question11')" class="btn-group">
+        <button type="button" [disabled]="!done" class="btn btn-outline-light" [value]="x.id"
+        >{{x.options}}</button>
+      </div>
+    </div>
+
+    <div class="row quiz-card bg-dark">
+      <label for="question12" class="form-label col-4" style="text-align: center;"><i class="bi bi-lightbulb-fill" style="color: yellow;"></i>{{this.questions[11].question}}</label>
+      <div class="ratings d-flex justify-content-center align-items-center">
+      <bar-rating [theme]="'stars'" formControlName="question12" [max]="10">
+        <ng-template ratingActive>
+          <i class="bi bi-star-fill" style="margin: 2px; color: #edb867"></i>
+        </ng-template>
+        <ng-template ratingInactive>
+          <i class="bi bi-star-fill" style="margin: 2px; color: #d2d2d2"></i>
+        </ng-template>
+      </bar-rating>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-outline-success submit">Submit</button>
+  </form>
+</div>
+
+

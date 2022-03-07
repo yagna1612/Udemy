@@ -1,0 +1,34 @@
+<div class="row ps-lg-1 pe-lg-1 pt-xl-4">
+  <div class="m-auto mt-3 bg-dark">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <label for="name" class="form-label col-4">Username</label>
+            <input type="text" class="form-control col"
+            formControlName="userName"
+            >
+            <span *ngIf="!userName.valid && userName.touched"
+            class="error-block">
+              Please provide name
+            </span>
+        </div>
+
+        <div class="row">
+          <label for="passwrod" class="form-label col-4">Password</label>
+          <input type="password" class="form-control col" formControlName="password">
+          <span *ngIf="!password.valid && password.touched" class="error-block">
+            <span *ngIf="password.errors['required']">
+              Please provide password
+            </span>
+            <span *ngIf="password.errors['minlength']">
+              Password should not be lesser than 8 character
+            </span>
+          </span>
+        </div>
+        <div class="w-100 p-3">
+          <button type="reset" class="btn btn-outline-danger col-4" style="float: left;" (click)="goBack()">Cancel</button>
+          <button type="submit" class="btn btn-outline-primary col-4" style="float: right;">Login</button>
+        </div>
+      </form>
+  </div>
+
+</div>

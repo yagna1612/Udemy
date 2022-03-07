@@ -1,0 +1,26 @@
+.text{
+  font-size: x-large;
+  /* transform: scale(2,2); */
+  /* height: calc(80vh - 8em); */
+  /* width: 71%; */
+  padding: 2em 2em 2em 2em;
+  /* transform: rotate(-5deg); */
+  height: 288px;
+  word-spacing: 2px;
+  font-weight:lighter ;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: Hand;
+  background-color: transparent;
+  background-image: url('/assets/images/board.jpg');
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  object-fit: fill;
+}
+.container{
+  /* width:390px; */
+  height: 400px;
+  /* margin-left: 50px; */
+  /* float: left; */
+
+}

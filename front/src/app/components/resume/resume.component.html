@@ -1,0 +1,47 @@
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title m-0" id="modal-basic-title">Yagna Patel</h2>
+    <button type="button" class="btn btn-outline-dark" aria-label="Close" (click)="close()">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <table class="table table-borderless">
+      <tr ><th class="bp">Email</th><th class="bp">Phone</th></tr>
+      <tr><td >ypatel19@asu.edu</td><td >480-803-9862</td></tr>
+      <tr ><th class="bp" colspan="2">Education</th></tr>
+      <tr>
+        <td>Arizona State University</td>
+        <td>Pandit Deendayal Petroleum University</td>
+      </tr>
+      <tr>
+        <td>Master's Degree - Computer Science</td>
+        <td>Bachelor's Degree - Computer Science</td>
+      </tr>
+      <tr >
+        <td>3.22/4</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr class="bp"><th colspan="2">Professional Experience</th></tr>
+      <ng-container *ngFor="let item of experiences">
+        <tr class="head"><td >{{item.title}} - {{item.duration}}</td>
+        <td class="head">{{item.location}}</td></tr>
+        <tr *ngFor="let x of item.desc"><td colspan="2">{{x}}</td></tr>
+      </ng-container>
+      <tr class="bp"><th colspan="2">Projects</th></tr>
+      <ng-container *ngFor="let item of projects,let i = index">
+        <tr ><td class="head" colspan="2">{{item.name}}</td></tr>
+        <tr ><td class="head" colspan="2">{{item.location}}</td></tr>
+        <tr *ngFor="let x of item.desc"><td colspan="2">{{x}}</td></tr>
+        <tr *ngIf="i!=projects.length-1" style="border-bottom: 1px dotted black;"></tr>
+      </ng-container>
+      <tr class="bp"><th colspan="2">Technical Skills</th></tr>
+      <tr><td colspan="2">{{skills}}</td></tr>
+      <tr class="bp"><th colspan="2">Extracurricular Activities</th></tr>
+      <ng-container *ngFor="let item of extra,let i = index">
+        <tr ><td colspan="2">{{item}}</td></tr>
+        <tr *ngIf="i!=extra.length-1" style="border-bottom: 1px dotted black;"></tr>
+      </ng-container>
+    </table>
+  </div>
+</ng-template>
