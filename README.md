@@ -19,4 +19,6 @@ on this website and add more features and showcase my projects and try to integr
 
 The application is hosted using azure and firebase.
 #### Link : https://portfolio-yagna.web.app/
+##### To access the Quiz module of the website, press the 'Quiz Dashboard' button.
+  
 
